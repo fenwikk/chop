@@ -76,24 +76,37 @@ const Home: NextPage = () => {
 
       <main>
         <div
-          className="relative flex h-[80vh] items-center justify-center bg-cover bg-center"
+          className="relative flex h-[80vh] flex-col items-center justify-center gap-4 bg-cover bg-center text-white"
           style={{ backgroundImage: "url(/hero.jpg)" }}
         >
-          <div className="absolute bottom-0 left-0 right-0 top-0 bg-black/30"></div>
-          <div className="z-20">
-            <h1 className="text-3xl font-bold text-white">
-              Lorem ipsum dolor sit...
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-black/40"></div>
+          <div className="z-20 flex flex-col items-center gap-2 text-center ">
+            <h1 className=" font-serif text-4xl font-bold sm:text-5xl">
+              Love at first bite
             </h1>
+            <p className="text-lg">Välkommen till Thai n&apos; Sushi For You</p>
+          </div>
+          <div className="z-20 flex gap-2">
+            <button className="bg-ts-blue px-5 py-2">
+              <a href="https://thainsushi.qopla.com/restaurant/thai-n-sushi-for-you---rosengard-centrum/q98Mm2PvzA/order">
+                Meny
+              </a>
+            </button>
+            <button className="bg-ts-blue px-5 py-2">
+              <a href="https://goo.gl/maps/TkaPMBSvaadxNx5YA">Hitta hit</a>
+            </button>
           </div>
         </div>
 
         <div className="container flex flex-col items-center py-12">
-          <h2 className="text-4xl font-black text-ts-blue">Våra favoriter</h2>
+          <h2 className="text-4xl font-black text-ts-blue-dark">
+            Våra favoriter
+          </h2>
           <div className="my-6 grid grid-rows-3 gap-6 lg:grid-cols-3 lg:grid-rows-none">
             {favorites.map((favorite) => (
               <div
                 key={favorite.name}
-                className="relative flex w-full flex-col items-center overflow-hidden rounded-lg bg-ts-blue text-white"
+                className="relative flex w-full flex-col items-center overflow-hidden rounded-lg bg-ts-blue-dark text-white"
               >
                 <span className="absolute right-1 top-1 rounded-xl bg-ts-red p-2 text-2xl font-black">
                   {favorite.price} kr
@@ -104,7 +117,7 @@ const Home: NextPage = () => {
                   className="w-full object-cover lg:max-h-52 xl:max-h-60"
                 />
 
-                <div className="absolute bottom-0 w-full bg-ts-blue p-4 lg:static">
+                <div className="absolute bottom-0 w-full bg-ts-blue-dark p-4 lg:static">
                   <h3 className="font-black">{favorite.name}</h3>
                   <p>{favorite.description}</p>
                 </div>
@@ -142,25 +155,23 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <footer className="bg-ts-blue  text-white">
-          <div className="bg-black/30 py-12">
-            <div className="container flex max-w-[75%] items-center justify-between">
-              <div className="flex flex-col">
-                <a href="https://thainsushi.qopla.com/restaurant/thai-n-sushi-for-you---rosengard-centrum/q98Mm2PvzA/order">
-                  Meny
-                </a>
-                <a href="https://www.foodora.se/restaurant/s7gw/thai-n-sushi-for-you">
-                  Beställ
-                </a>
-                <a href="https://goo.gl/maps/TkaPMBSvaadxNx5YA">Hitta Hit</a>
-                <a href="mailto:filip.martensson@seabird.digital">Kontakt</a>
-              </div>
+        <footer className="bg-ts-blue-dark py-12 text-white">
+          <div className="container flex max-w-[75%] items-center justify-between">
+            <div className="flex flex-col">
+              <a href="https://thainsushi.qopla.com/restaurant/thai-n-sushi-for-you---rosengard-centrum/q98Mm2PvzA/order">
+                Meny
+              </a>
+              <a href="https://www.foodora.se/restaurant/s7gw/thai-n-sushi-for-you">
+                Beställ
+              </a>
+              <a href="https://goo.gl/maps/TkaPMBSvaadxNx5YA">Hitta Hit</a>
+              <a href="mailto:filip.martensson@seabird.digital">Kontakt</a>
+            </div>
 
-              <div className="text-right">
-                Copyright 2023 &copy; Seabird Digital.
-                <br />
-                All rights reserved.
-              </div>
+            <div className="text-right">
+              Copyright 2023 &copy; Seabird Digital.
+              <br />
+              All rights reserved.
             </div>
           </div>
         </footer>

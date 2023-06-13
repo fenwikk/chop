@@ -10,6 +10,8 @@ export default {
       },
       colors: {
         "ts-blue": "#283683",
+        "ts-blue-dark": "#18204f",
+        "ts-blue-darker": "#101636",
         "ts-red": "#a8254cff",
       },
     },
