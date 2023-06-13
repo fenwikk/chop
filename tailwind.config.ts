@@ -8,6 +8,10 @@ export default {
         center: true,
         padding: "1rem",
       },
+      colors: {
+        "ts-blue": "#283683",
+        "ts-red": "#a8254cff",
+      },
     },
   },
   plugins: [],

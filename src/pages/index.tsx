@@ -34,42 +34,67 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="absolute w-full">
-        <div className="container grid grid-cols-[20%,60%,20%] items-center py-6 text-white">
-          <img src="" alt="Logo" />
-          <nav className="flex items-center justify-center gap-4 font-black uppercase">
-            <a href="">Vår meny</a>
-            <a href="">Beställ</a>
-            <a href="">Kontakt</a>
+      <div className="absolute z-50 w-full">
+        <div className="container flex grid-cols-[20%,60%,20%] items-center justify-between py-6 text-white md:grid">
+          <Image src="/logo.png" height={56} width={100} alt="Logo" />
+          <nav>
+            <div className="hidden items-center justify-center gap-4 font-black uppercase md:flex">
+              <a
+                className="relative after:absolute after:right-0 after:block after:h-[2px] after:w-0 after:bg-white after:duration-200 after:hover:w-full"
+                href=""
+              >
+                Vår meny
+              </a>
+              <a
+                className="relative after:absolute after:right-0 after:block after:h-[2px] after:w-0 after:bg-white after:duration-200 after:hover:w-full"
+                href=""
+              >
+                Beställ
+              </a>
+              <a
+                className="relative after:absolute after:right-0 after:block after:h-[2px] after:w-0 after:bg-white after:duration-200 after:hover:w-full"
+                href=""
+              >
+                Hitta hit
+              </a>
+              <a
+                className="relative after:absolute after:right-0 after:block after:h-[2px] after:w-0 after:bg-white after:duration-200 after:hover:w-full"
+                href=""
+              >
+                Kontakt
+              </a>
+            </div>
           </nav>
           <div className="flex justify-end">
-            <button className="w-fit rounded-full border-none bg-orange-500 px-3 py-2">
+            <button className="w-fit rounded-full border-none bg-ts-red px-3 py-2">
               (0)12-345 67 89
             </button>
           </div>
         </div>
       </div>
 
-      <a className="fixed right-0 top-1/2 -m-20 -rotate-90 bg-orange-500 px-4 py-2 duration-200 hover:cursor-pointer hover:opacity-80">
-        <span className="text-4xl font-black text-white">beställ nu</span>
-      </a>
-
       <main>
-        <div className="flex h-[80vh] items-center justify-center bg-blue-900">
-          <h1 className="text-3xl font-bold text-white">
-            Lorem ipsum dolor sit...
-          </h1>
+        <div
+          className="relative flex h-[80vh] items-center justify-center bg-cover bg-center"
+          style={{ backgroundImage: "url(/hero.jpg)" }}
+        >
+          <div className="absolute bottom-0 left-0 right-0 top-0 bg-black/30"></div>
+          <div className="z-20">
+            <h1 className="text-3xl font-bold text-white">
+              Lorem ipsum dolor sit...
+            </h1>
+          </div>
         </div>
 
         <div className="container flex flex-col items-center py-12">
           <h2 className="text-4xl font-black text-blue-950">Våra favoriter</h2>
-          <div className="my-6 grid grid-cols-3 gap-6">
+          <div className="my-6 grid grid-rows-3 gap-6 sm:grid-cols-3 sm:grid-rows-none">
             {favorites.map((favorite) => (
               <div
                 key={favorite.name}
                 className="relative flex flex-col items-center overflow-hidden rounded-lg bg-blue-950 text-white"
               >
-                <span className="absolute right-3 top-2 text-2xl font-black text-orange-300">
+                <span className="absolute right-3 top-2 text-2xl font-black text-ts-red">
                   {favorite.price} kr
                 </span>
                 <img
@@ -85,14 +110,14 @@ const Home: NextPage = () => {
             ))}
           </div>
 
-          <button className="w-fit rounded-full border-none bg-orange-500 px-5 py-3 text-lg text-white">
+          <button className="w-fit rounded-full border-none bg-ts-red px-5 py-3 text-lg text-white">
             Se hela menyn
           </button>
         </div>
 
-        <div className="bg-blue-900 text-white">
-          <div className="container grid grid-cols-[50%,50%] py-12">
-            <div className="flex gap-2">
+        <div className="bg-ts-blue text-white">
+          <div className="container flex justify-center gap-12 py-12">
+            <div className="flex justify-end gap-2">
               <div>
                 <Image
                   src="https://picsum.photos/40/40"
@@ -116,7 +141,7 @@ const Home: NextPage = () => {
         </div>
 
         <footer className="bg-blue-950 py-12 text-white">
-          <div className="container flex items-center justify-between">
+          <div className="container flex max-w-[75%] items-center justify-between">
             <div className="flex flex-col">
               <a href="">Meny</a>
               <a href="">Beställ</a>
@@ -131,6 +156,12 @@ const Home: NextPage = () => {
           </div>
         </footer>
       </main>
+
+      <div className="h-14 md:h-auto">
+        <a className="fixed bottom-0 right-0 z-50 flex w-full justify-center bg-ts-red px-4 py-2 hover:cursor-pointer hover:opacity-80 md:bottom-1/2 md:-m-20 md:w-auto md:-rotate-90 md:duration-200">
+          <span className="text-4xl font-black text-white">beställ nu</span>
+        </a>
+      </div>
     </>
   );
 };
